@@ -1,4 +1,4 @@
-name: release-please
+name: release
 on:
   # !STARTERCONF Choose your preferred event
   # !Option 1: Manual Trigger from GitHub
