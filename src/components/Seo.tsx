@@ -1,14 +1,15 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
-// !STARTERCONF Change these default meta
+import { openGraph } from '@/lib/helper';
+
 const defaultMeta = {
-  title: 'Next.js + Tailwind CSS + TypeScript Starter',
-  siteName: 'Next.js + Tailwind CSS + TypeScript Starter',
+  title: 'Allo Doc Theo',
+  siteName: 'Allo Doc Theo',
   description:
-    'A starter for Next.js, Tailwind CSS, and TypeScript with Absolute Import, Seo, Link component, pre-configured with Husky',
+    "Besoin d'un docteur accessible et compétent pour répondre à toutes vos questions de santé ? AlloDocTheo est là pour vous ! Avec une expertise en nutrition anti-inflammatoire, le Dr Théodore vous accompagne pour une vie saine et équilibrée. Prenez rendez-vous dès maintenant pour un suivi personnalisé.",
   /** Without additional '/' on the end, e.g. https://theodorusclarence.com */
-  url: 'https://tsnext-tw.thcl.dev',
+  url: 'https://allodoctheo.com',
   type: 'website',
   robots: 'follow, index',
   /**
@@ -35,13 +36,12 @@ export default function Seo(props: SeoProps) {
 
   // Use siteName if there is templateTitle
   // but show full title if there is none
-  // !STARTERCONF Follow config for opengraph, by deploying one on https://github.com/theodorusclarence/og
   // ? Uncomment code below if you want to use default open graph
-  // meta['image'] = openGraph({
-  //   description: meta.description,
-  //   siteName: props.templateTitle ? meta.siteName : meta.title,
-  //   templateTitle: props.templateTitle,
-  // });
+  meta['image'] = openGraph({
+    description: meta.description,
+    siteName: props.templateTitle ? meta.siteName : meta.title,
+    templateTitle: props.templateTitle,
+  });
 
   return (
     <Head>
@@ -58,7 +58,6 @@ export default function Seo(props: SeoProps) {
       <meta name='image' property='og:image' content={meta.image} />
       {/* Twitter */}
       <meta name='twitter:card' content='summary_large_image' />
-      {/* // !STARTERCONF Remove or change to your handle */}
       {/* <meta name='twitter:site' content='@th_clarence' /> */}
       <meta name='twitter:title' content={meta.title} />
       <meta name='twitter:description' content={meta.description} />
@@ -71,11 +70,10 @@ export default function Seo(props: SeoProps) {
             property='og:publish_date'
             content={meta.date}
           />
-          {/* // !STARTERCONF Remove or change to your name */}
           <meta
-            name='author'
-            property='article:author'
-            content='Theodorus Clarence'
+            name='AlloDocTheo'
+            property='article:AlloDocTheo'
+            content='Docteur Theodore'
           />
         </>
       )}
@@ -91,8 +89,6 @@ export default function Seo(props: SeoProps) {
   );
 }
 
-// !STARTERCONF this is the default favicon, you can generate your own from https://realfavicongenerator.net/
-// ! then replace the whole /public/favicon folder and favicon.ico
 const favicons: Array<React.ComponentPropsWithoutRef<'link'>> = [
   {
     rel: 'apple-touch-icon',
