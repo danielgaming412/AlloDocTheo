@@ -22,7 +22,6 @@ export default function AboutPage() {
           pour accompagner chaque individu dans sa quête d'un mode de vie sain
           et équilibré.
         </p>
-
         <p className='my-1 text-gray-800'>
           Nous ne pouvons éviter le stress de notre quotidien, mais nous avons
           tous en nous la force nécessaire pour y faire face. C'est pourquoi
@@ -30,7 +29,6 @@ export default function AboutPage() {
           site et mes réseaux sociaux, afin de vous guider dans votre recherche
           d'une meilleure santé.
         </p>
-
         <p className='mt-1 text-gray-800'>
           Je suis à votre disposition pour répondre à toutes vos questions et
           vous accompagner tout au long de votre parcours vers une vie plus
