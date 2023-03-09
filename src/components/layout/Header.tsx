@@ -1,15 +1,11 @@
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react';
 import { ChevronDownIcon } from '@heroicons/react/20/solid';
-import {
-  Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
-  XMarkIcon,
-} from '@heroicons/react/24/outline';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { Fragment, useState } from 'react';
+import { BsFillSearchHeartFill } from 'react-icons/bs';
+import { GiFruitBowl } from 'react-icons/gi';
+import { MdOutlineSick, MdTranslate } from 'react-icons/md';
 
 import NextImage from '@/components/NextImage';
 
@@ -17,27 +13,27 @@ const products = [
   {
     name: 'Alimentation',
     description: 'Dites-moi ce que vous mangez, je vous dirais qui vous êtes !',
-    href: '#',
-    icon: ChartPieIcon,
+    href: '/alimentation',
+    icon: GiFruitBowl,
   },
   {
     name: 'Micro-Nutrition ',
-    description: "Tu as tes vitamines, j'ai les miennes !",
-    href: '#',
-    icon: CursorArrowRaysIcon,
+    description: 'À chacun·e ses vitamines et nutriments',
+    href: '/micronutrition',
+    icon: BsFillSearchHeartFill,
   },
   {
     name: 'Les mots barbares',
-    description: "Colique néphré quoi ? C'est quoi ce mot barbare encore ?!",
-    href: '#',
-    icon: FingerPrintIcon,
+    description: "Colique néphré.. quoi ? C'est quoi ce mot barbare encore ?!",
+    href: '/mots-barbares',
+    icon: MdTranslate,
   },
   {
     name: 'Les maladies',
     description:
       'Un essai de vulgarisation sur les différents maux du corps humain',
-    href: '#',
-    icon: SquaresPlusIcon,
+    href: '/maladies',
+    icon: MdOutlineSick,
   },
 ];
 
@@ -126,17 +122,26 @@ export default function HeaderComponent() {
             </Transition>
           </Popover>
 
-          <a href='#' className='text-sm font-semibold leading-6 text-gray-900'>
+          <a
+            href='/ebooks'
+            className='text-sm font-semibold leading-6 text-gray-900'
+          >
             E-books
           </a>
-          <a href='#' className='text-sm font-semibold leading-6 text-gray-900'>
+          <Link
+            href='/mon-journal'
+            className='text-sm font-semibold leading-6 text-gray-900'
+          >
             Mon journal
-          </a>
+          </Link>
         </Popover.Group>
         <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
-          <a href='#' className='text-sm font-semibold leading-6 text-gray-900'>
-            Contact <span aria-hidden='true'>&rarr;</span>
-          </a>
+          <Link
+            href='/contact'
+            className='text-sm font-semibold leading-6 text-gray-900'
+          >
+            Une question ?<span aria-hidden='true'>&rarr;</span>
+          </Link>
         </div>
       </nav>
       <Dialog
@@ -199,26 +204,26 @@ export default function HeaderComponent() {
                     </>
                   )}
                 </Disclosure>
-                <a
-                  href='#'
+                <Link
+                  href='/ebooks'
                   className='-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
                 >
                   Ebooks
-                </a>
-                <a
-                  href='#'
+                </Link>
+                <Link
+                  href='/mon-journal'
                   className='-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
                 >
                   Mon journal
-                </a>
+                </Link>
               </div>
               <div className='py-6'>
-                <a
-                  href='#'
+                <Link
+                  href='/contact'
                   className='-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
                 >
-                  Contact
-                </a>
+                  Une question ?
+                </Link>
               </div>
             </div>
           </div>
