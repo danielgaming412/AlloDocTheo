@@ -8,6 +8,7 @@ import Seo from '@/components/Seo';
 
 import BigRoundLogo from '../../public/images/BigRoundLogo.png';
 import HeaderHero from '../../public/images/large-og.png';
+import HeaderHeroMobile from '../../public/images/large-og-mobile.png';
 
 export default function HomePage() {
   return (
@@ -17,8 +18,17 @@ export default function HomePage() {
 
       <main>
         <section className='bg-white'>
-          <div className='h-[100vh] w-full'>
-            <Image src={HeaderHero} alt='Allo Doc Theo' />
+          <div className='h-full w-full lg:h-[100vh]'>
+            <Image
+              src={HeaderHero}
+              alt='Allo Doc Theo'
+              className='hidden md:block'
+            />
+            <Image
+              src={HeaderHeroMobile}
+              alt='Allo Doc Theo'
+              className='block md:hidden'
+            />
           </div>
 
           <div className='layout relative flex min-h-screen flex-col items-center justify-center py-12 text-center'>
@@ -38,9 +48,7 @@ export default function HomePage() {
 
             <footer className='absolute bottom-2 text-gray-700'>
               © {new Date().getFullYear()} Par{' '}
-              <UnderlineLink href='https://theodorusclarence.com?ref=tsnextstarter'>
-                Docteur Théodore
-              </UnderlineLink>
+              <UnderlineLink href=''>Docteur Théodore</UnderlineLink>
             </footer>
           </div>
         </section>
