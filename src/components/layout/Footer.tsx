@@ -5,7 +5,7 @@ export default function FooterComponent() {
     <div className='layout relative flex flex-col items-center justify-center py-12 text-center'>
       <footer className='absolute bottom-2 text-gray-700'>
         © {new Date().getFullYear()} Par{' '}
-        <UnderlineLink href='/about'>Docteur Théodore</UnderlineLink>
+        <UnderlineLink href='/a-propos'>Docteur Théodore</UnderlineLink>
       </footer>
     </div>
   );
